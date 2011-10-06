@@ -14,16 +14,18 @@ h1       { font-family: "Impact"; font-size: 4em; font-weight: normal; color: #1
 #menu.show { width: 100%; background: #012; text-align: left; position: fixed; top: 0; left: 0;
   right: 0; border-right: 1px solid #012 }
 
-#darkplaces li   { display: block; cursor: pointer; float: left; background: #152637; margin: 5px }
+#darkplaces li   { display: block; cursor: pointer; float: left; background: #152637; margin: 5px;}
+#darkplaces li.current   { background: #234; }
+#darkplaces li.current a { color: #234; }
 #darkplaces li a { display: block; float: right; margin-left: 10px; text-decoration: none; color: #152637 }
 #darkplaces li,
-#newDarkplace    { font-size: 16px; margin: 10px 5px; line-height: 20px; padding: 5px; border: none }
+#newDarkplace    { font-size: 16px; margin: 10px 5px; line-height: 20px; padding: 5px; }
 
 #darkplaces li:hover         { background: #234; color: #567 }
 #darkplaces li:hover a       { color: #000 }
 #darkplaces li:hover a:hover { color: red }
 
-#newDarkplace    { float: right; font-size: 16px; width: 225px; background: #234; outline:none }
+#newDarkplace    { float: right; font-size: 16px; width: 225px; background: #234; outline:none; border: none }
 #newDarkplace::-webkit-input-placeholder { color: #123 }
 #newDarkplace:-moz-placeholder           { color: #123 }
 

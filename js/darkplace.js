@@ -29,6 +29,7 @@ DP = {
   },
   open: function(name) {
     textArea.value = DP.store.get( DP.store.setCurrent(name) )
+    this.renderMenu()
   },
 
   openOrDelete: function(e) {
@@ -71,6 +72,18 @@ DP = {
      }
      document.querySelector("#darkplaces").appendChild(li)
    })
+   this.highlightActive()
+  },
+
+  highlightActive: function() {
+    var listArray = []
+    var list = document.querySelectorAll('#menu li')
+    for (var i = list.length >>> 0; i--;) {
+      list[i].className = ''
+      listArray[i] = list[i];
+    }
+    var li = listArray.filter(function(li) { return li.firstChild.textContent == DP.store.getCurrent()})[0]
+    if (li) li.className = 'current'
   },
 
   create: function(e) {
