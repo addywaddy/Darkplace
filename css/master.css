@@ -13,3 +13,26 @@ h1       { font-size: 4em; font-weight: normal; color: #def; text-shadow: #012 2
 #darkplaces li:hover {background: #234; color: #567 }
 #darkplaces li:hover a {color: #000 }
 #darkplaces li:hover a:hover {color: red }
+div#intro { margin: 0 auto; text-align: center; width: 100%; background: #000; position: absolute;
+  top: -10000px; left: 0; padding-top: 150px;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: fadeOut;
+  -moz-animation-duration: 2s;
+  -moz-animation-name: fadeOut;
+}
+
+@-webkit-keyframes fadeOut {
+  from { bottom: 0; top: 0; opacity: 1; }
+
+  75% { opacity: 1; }
+
+  to { bottom: 0; top: 0; opacity: 0 }
+}
+
+@-moz-keyframes fadeOut {
+  from { bottom: 0; top: 0; opacity: 1; }
+
+  75% { opacity: 1; }
+
+  to { bottom: 0; top: 0; opacity: 0 }
+}
