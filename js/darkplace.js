@@ -11,7 +11,11 @@ DP = {
     },
 
     setCurrent: function(val) {
-      localStorage.setItem("_DP", val)
+      if (val) {
+        localStorage.setItem("_DP", val)
+      } else {
+        localStorage.removeItem("_DP")
+      }
       return this.getCurrent()
     },
 
@@ -39,7 +43,7 @@ DP = {
       if (confirm("Sure you want to delete '" + name + "'?")) {
         if (DP.store.getCurrent() == name) {
           // Clears the current page
-          DP.store.setCurrent('')
+          DP.store.setCurrent()
         }
         DP.store.delete(name)
         DP.renderMenu()
