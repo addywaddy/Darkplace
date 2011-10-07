@@ -33,6 +33,7 @@ DP = {
   },
 
   openOrDelete: function(e) {
+    e.preventDefault()
     if (e.target.className == 'destroy') {
       var name = e.target.parentElement.firstChild.textContent
       if (confirm("Sure you want to delete '" + name + "'?")) {
@@ -61,7 +62,7 @@ DP = {
    var list = [], link, li
    DP.store.all().forEach(function(key) {
      with (link = document.createElement('a')) {
-       setAttribute('href', '')
+       setAttribute('href', '#')
        innerHTML = "x"
        setAttribute("class", 'destroy')
      }
