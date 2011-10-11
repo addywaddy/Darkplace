@@ -39,7 +39,7 @@ DP = {
   openOrDelete: function(e) {
     e.preventDefault()
     if (e.target.className == 'destroy') {
-      var name = e.target.parentElement.firstChild.textContent
+      var name = e.target.parentNode.firstChild.textContent
       if (confirm("Sure you want to delete '" + name + "'?")) {
         if (DP.store.getCurrent() == name) {
           // Clears the current page
@@ -111,18 +111,19 @@ DP = {
   }
 }
 
+
 document.querySelector("#newDarkplace").addEventListener("keypress", DP.create, false)
 document.querySelector("#darkplaces").addEventListener("click", DP.openOrDelete, false)
 document.querySelector("body").addEventListener("mouseover", function(event) {
   if (event.target.tagName == 'BODY') document.querySelector("#menu").className = 'show'
 }, false)
 
-document.querySelector("#darkplace").addEventListener("click", function(event) {
+var textArea = document.querySelector("#darkplace")
+
+textArea.addEventListener("click", function(event) {
   var menu = document.querySelector("#menu")
   if (menu.className == 'show') menu.className = ''
 }, false)
-
-var textArea = document.querySelector("#darkplace")
 
 var interval = setInterval(DP.save, 2e3)
 
